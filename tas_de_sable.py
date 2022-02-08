@@ -22,3 +22,4 @@ canvas = tk.Canvas(racine, height = HEIGHT, width = WIDTH)
 canvas.pack(expand = YES)
 racine.mainloop()
 
+print("aah")
