@@ -6,20 +6,33 @@
 # https://github.com/uvsq22102500/projet_tas_de_sable
 ###########################
 
-############### Constantes
+############### 
+# Librairies
+import tkinter as tk
+
+############### 
+# Constantes
 HEIGHT = 500
 WIDTH = 500
+N = 3
 
-########### Partie Principale
-import tkinter as tk
-from tkinter.messagebox import YES
+############## 
+# Fonctions
+def grille():
+    grille = []
+    for i in range(N):
+        grille.append([0]*N)
+    print(grille)
+
+
+############
+# Partie Principale
 
 racine = tk.Tk()
 racine.title("Tas de Sable")
 racine.geometry("600x600")
 canvas = tk.Canvas(racine, height = HEIGHT, width = WIDTH)
-canvas.pack(expand = YES)
-
+canvas.pack()
 
 
 racine.mainloop()
