@@ -14,12 +14,13 @@ WIDTH = 500
 import tkinter as tk
 from tkinter.messagebox import YES
 
-print("hello world")
 racine = tk.Tk()
 racine.title("Tas de Sable")
 racine.geometry("600x600")
 canvas = tk.Canvas(racine, height = HEIGHT, width = WIDTH)
 canvas.pack(expand = YES)
+
+
+
 racine.mainloop()
 
-print("aah")
