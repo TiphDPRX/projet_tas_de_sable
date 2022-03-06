@@ -22,7 +22,7 @@ liste=[]
 #creation de l'interface graphique (notre fenetre et canvas) 
 window=Tk()
 window.title("tas de sable")
-window.geometry("300x300")
+window.geometry("800x800")
 canvas=Canvas(window, height=height , width=width)
 #faire appel a notre fonction qui demarera tout notre programme
 
