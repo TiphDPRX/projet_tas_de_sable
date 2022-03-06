@@ -63,7 +63,7 @@ def config_courante():
 def config_courante2():
     for i in range (9):
         liste_chiffre[i].config(text=str(liste[i]))
-    '''liste_chiffre[i]=liste[i] is this possible'''
+    '''liste_chiffre[i]=liste[i] '''
     ''' affichage... '''
      
 #creation du bouton et son affichage
