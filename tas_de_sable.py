@@ -6,11 +6,11 @@
 # https://github.com/uvsq22102500/projet_tas_de_sable
 ###########################
 
-# importation des bibliotheques
+# importation des bibliotheques 
 from tkinter import *
 import random
 
-# creation de la taille de notre canvas
+#creation de la taille de notre canvas
 height=800
 width=800
 
@@ -93,3 +93,36 @@ boutton_sou=Button(window,command=soustraction)
 
 '''faire appel a config_courante'''
 window.mainloop()
+=======
+############### 
+# Librairies
+import tkinter as tk
+
+############### 
+# Constantes
+HEIGHT = 500
+WIDTH = 500
+N = 3
+
+############## 
+# Fonctions
+def grille():
+    grille = []
+    for i in range(N):
+        grille.append([0]*N)
+    print(grille)
+
+
+############
+# Partie Principale
+
+racine = tk.Tk()
+racine.title("Tas de Sable")
+racine.geometry("600x600")
+canvas = tk.Canvas(racine, height = HEIGHT, width = WIDTH)
+canvas.pack()
+
+
+racine.mainloop()
+
+
