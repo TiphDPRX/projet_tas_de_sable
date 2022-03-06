@@ -51,11 +51,11 @@ def config_courante():
         n= random.randint (1,9)
         liste.append(n)
 
-#fonction couleurs je ne sais quoi
+#fonction couleurs 
 ''' chaque chiffre aura une couleur ? '''
 
 #config aleatoire entre 0 3
-'''pas capter'''
+'''pas compris'''
 
 
 
