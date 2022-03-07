@@ -7,6 +7,7 @@
 ###########################
 
 # importation des bibliotheques 
+from sys import builtin_module_names
 from tkinter import *
 import random
 
@@ -53,6 +54,16 @@ def config_courante():
 
 #fonction couleurs 
 ''' chaque chiffre aura une couleur ? '''
+    
+    liste_chiffre[0]=blue 
+    liste_chiffre[1]=green 
+    liste_chiffre[2]=red 
+    liste_chiffre[3]=orange 
+    liste_chiffre[4]=yellow
+    liste_chiffre[5]=cyan 
+    liste_chiffre[6]=magenta
+    liste_chiffre[7]=white 
+    liste_chiffre[8]=black 
 
 #config aleatoire entre 0 3
 '''pas compris'''
