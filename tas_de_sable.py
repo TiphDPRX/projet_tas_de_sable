@@ -84,7 +84,7 @@ boutton.pack()
 
 #creation de la fonction qui va creer l'eboulement
 def eboulement():
-   
+    
 
 #creation du bouton qui permettra de faire l'eboulement
 boutton_eboulement=Button(window, command=eboulement ,text='eboulement' , bg='black', fg='white')
