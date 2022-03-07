@@ -1,7 +1,7 @@
 ############################
 # groupe MI 2
-# Tiphanie DEPREAUX
 # Ania AOUAOUCHE
+# Tiphanie DEPREAUX
 # Delphine HEMMERY
 # https://github.com/uvsq22102500/projet_tas_de_sable
 ###########################
@@ -10,88 +10,87 @@
 from tkinter import *
 import random
 
+
 #creation de la taille de notre canvas
-height=800
-width=800
+height=600
+width=600
+
 
 # creation de nos variables globales
-liste_chiffre=[]
 liste=[]
+liste_G=[]
+N=12
+''' liste est une liste qu'on utilisera comme sous liste afin de creer notre liste_G de 2Dimensions 
+quant a N c est le nombre de cases qu'on generera soit NxN '''
 
 
-#creation de l'interface graphique (notre fenetre et canvas) 
+#creation de notre fenetre principale 
 window=Tk()
 window.title("tas de sable")
-window.geometry("800x800")
+window.geometry("700x700")
 canvas=Canvas(window, height=height , width=width)
-#faire appel a notre fonction qui demarera tout notre programme
+canvas.pack(expand=YES) 
 
 
-#####################FUNCTIONS######################
+###############################FUNCTIONS##################################
 
-#fonction qui va creer la configuration courante (sans les chiffres)
 
+#fonction qui va creer la configuration courante 
 def config_courante():
-    chiffre1 = Label(window, text="#")
-    chiffre2 = Label(window, text="#")
-    chiffre3 = Label(window, text="#")
-    chiffre4 = Label(window, text="#")
-    chiffre5 = Label(window, text="#")
-    chiffre6 = Label(window, text="#")
-    chiffre7 = Label(window, text="#")
-    chiffre8 = Label(window, text="#")
-    chiffre9 = Label(window, text="#")
-    '''affichage des # '''
-
-    #mettre les chiffres dans une liste a 2D
-    liste_chiffre=[chiffre1,chiffre2,chiffre3,chiffre4,chiffre5,chiffre6,chiffre7,chiffre8,chiffre9]
-
-    #creer une liste composée aleatoirement
-    for i in range (9):
-        n= random.randint (1,9)
-        liste.append(n)
-
-#fonction couleurs 
-''' chaque chiffre aura une couleur ? '''
-
-#config aleatoire entre 0 3
-'''pas compris'''
+    #creation de la grille
+    for i in range (0,12):
+        for j in range (0,12):
+            canvas.create_rectangle((50*i,50*j), ( (50*(i+1)),(50*(j+1)) ),fill='black')
+    
+    #creation de ma liste a 2D 
+    for x in range (12):
+        liste=[]
+        for y in range (12):   
+            a = random.randint(1,9)
+            liste.append(a)
+        liste_G.append(liste)
 
 
 
-#fonction du bouton qui vas creer les 9 chiffres initiales
-def config_courante2():
-    for i in range (9):
-        liste_chiffre[i].config(text=str(liste[i]))
-    '''liste_chiffre[i]=liste[i] '''
-    ''' affichage... '''
-     
-#creation du bouton et son affichage
-boutton=Button(window, command=config_courante2 , text='Generer')
+#fonction qui va associer chaque chiffre a une couleur 
+def couleur() :
+    for i in range (12):
+        for j in range (12):
+            if liste_G[i][j] == 1 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="red")
+            elif liste_G[i][j] == 2 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="blue")
+            elif liste_G[i][j] == 3 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="green")
+            elif liste_G[i][j] == 4 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="black")
+            elif liste_G[i][j] == 5 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="white")
+            elif liste_G[i][j] == 6 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="yellow")
+            elif liste_G[i][j] == 7 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="purple")
+            elif liste_G[i][j] == 8 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="pink")         
+            elif liste_G[i][j] == 9 :
+                canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="brown")
+
+
+#faire appel a la fonctiion config_courante avant la fonction couleur
+config_courante()
+#creation du bouton de generation de notre terrain et son affichage
+boutton=Button(window, command=couleur , text='Generer',bg='black', fg='white')
 boutton.pack()
 
+#creation de la fonction qui va creer l'eboulement
+def eboulement():
+   
+
+#creation du bouton qui permettra de faire l'eboulement
+boutton_eboulement=Button(window, command=eboulement ,text='eboulement' , bg='black', fg='white')
+boutton_eboulement.pack()
 
 
-# fonction addition et son boutton
-def addition():
-    for i in range(9):
-        liste_chiffre[i]+=listechiffre[i]
-        '''int si besoin et l affichage'''
-
-boutton_add=Button(window,command=addition)
-
-# fonction soustraction et son boutton
-def soustraction():
-    for i in range(9):
-        liste_chiffre[i]-=listechiffre[i]
-        '''int si besoin et l affichage'''
-
-boutton_sou=Button(window,command=soustraction)
- 
-#faire une etape de l'automate
-#calculer la stabilisation d'une config
-
-'''faire appel a config_courante'''
 window.mainloop()
 
 
