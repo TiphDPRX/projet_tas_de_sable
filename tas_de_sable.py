@@ -75,7 +75,7 @@ boutton.pack()
 # fonction addition et son boutton
 def addition():
     for i in range(9):
-        liste_chiffre[i]+=listechiffre[i]
+        liste_chiffre[i]+=liste_chiffre[i]
         '''int si besoin et l affichage'''
 
 boutton_add=Button(window,command=addition)
@@ -83,7 +83,7 @@ boutton_add=Button(window,command=addition)
 # fonction soustraction et son boutton
 def soustraction():
     for i in range(9):
-        liste_chiffre[i]-=listechiffre[i]
+        liste_chiffre[i]-=liste_chiffre[i]
         '''int si besoin et l affichage'''
 
 boutton_sou=Button(window,command=soustraction)
