@@ -38,14 +38,14 @@ canvas.pack(expand=YES)
 #fonction qui va creer la configuration courante 
 def config_courante():
     #creation de la grille
-    for i in range (0,12):
-        for j in range (0,12):
+    for i in range (N):
+        for j in range (N):
             canvas.create_rectangle((50*i,50*j), ( (50*(i+1)),(50*(j+1)) ),fill='black')
     
     #creation de ma liste a 2D 
-    for x in range (12):
+    for x in range (N):
         liste=[]
-        for y in range (12):   
+        for y in range (N):   
             a = random.randint(1,9)
             liste.append(a)
         liste_G.append(liste)
@@ -54,8 +54,8 @@ def config_courante():
 
 #fonction qui va associer chaque chiffre a une couleur 
 def couleur() :
-    for i in range (12):
-        for j in range (12):
+    for i in range (N):
+        for j in range (N):
             if liste_G[i][j] == 1 :
                 canvas.create_rectangle((50*j , 50*i),( (50*(j+1)) , (50*(i+1)) ), fill ="red")
             elif liste_G[i][j] == 2 :
