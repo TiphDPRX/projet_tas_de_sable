@@ -6,34 +6,95 @@
 # https://github.com/uvsq22102500/projet_tas_de_sable
 ###########################
 
-############### 
-# Librairies
-import tkinter as tk
+# importation des bibliotheques 
+from tkinter import *
+import random
 
-############### 
-# Constantes
-HEIGHT = 500
-WIDTH = 500
-N = 3
+#creation de la taille de notre canvas
+height=800
+width=800
 
-############## 
-# Fonctions
-def grille():
-    grille = []
-    for i in range(N):
-        grille.append([0]*N)
-    print(grille)
+# creation de nos variables globales
+liste_chiffre=[]
+liste=[]
 
 
-############
-# Partie Principale
-
-racine = tk.Tk()
-racine.title("Tas de Sable")
-racine.geometry("600x600")
-canvas = tk.Canvas(racine, height = HEIGHT, width = WIDTH)
-canvas.pack()
+#creation de l'interface graphique (notre fenetre et canvas) 
+window=Tk()
+window.title("tas de sable")
+window.geometry("800x800")
+canvas=Canvas(window, height=height , width=width)
+#faire appel a notre fonction qui demarera tout notre programme
 
 
-racine.mainloop()
+#####################FUNCTIONS######################
+
+#fonction qui va creer la configuration courante (sans les chiffres)
+
+def config_courante():
+    chiffre1 = Label(window, text="#")
+    chiffre2 = Label(window, text="#")
+    chiffre3 = Label(window, text="#")
+    chiffre4 = Label(window, text="#")
+    chiffre5 = Label(window, text="#")
+    chiffre6 = Label(window, text="#")
+    chiffre7 = Label(window, text="#")
+    chiffre8 = Label(window, text="#")
+    chiffre9 = Label(window, text="#")
+    '''affichage des # '''
+
+    #mettre les chiffres dans une liste a 2D
+    liste_chiffre=[chiffre1,chiffre2,chiffre3,chiffre4,chiffre5,chiffre6,chiffre7,chiffre8,chiffre9]
+
+    #creer une liste composée aleatoirement
+    for i in range (9):
+        n= random.randint (1,9)
+        liste.append(n)
+
+#fonction couleurs 
+''' chaque chiffre aura une couleur ? '''
+
+#config aleatoire entre 0 3
+'''pas compris'''
+
+
+
+#fonction du bouton qui vas creer les 9 chiffres initiales
+def config_courante2():
+    for i in range (9):
+        liste_chiffre[i].config(text=str(liste[i]))
+    '''liste_chiffre[i]=liste[i] '''
+    ''' affichage... '''
+     
+#creation du bouton et son affichage
+boutton=Button(window, command=config_courante2 , text='Generer')
+boutton.pack()
+
+
+
+# fonction addition et son boutton
+def addition():
+    for i in range(9):
+        liste_chiffre[i]+=listechiffre[i]
+        '''int si besoin et l affichage'''
+
+boutton_add=Button(window,command=addition)
+
+# fonction soustraction et son boutton
+def soustraction():
+    for i in range(9):
+        liste_chiffre[i]-=listechiffre[i]
+        '''int si besoin et l affichage'''
+
+boutton_sou=Button(window,command=soustraction)
+ 
+#faire une etape de l'automate
+#calculer la stabilisation d'une config
+
+'''faire appel a config_courante'''
+window.mainloop()
+
+
+
+
 
